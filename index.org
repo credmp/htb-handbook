@@ -2,4 +2,4 @@
 
 This document is written with my Cybersecurity students in mind. If you are trying to learn Hack The Box it will serve as a great starting point for your own methodology. It provides some explanation and commands to run at each step. The document is built during our Hack Friday sessions at [[https://www.novi.nl][NOVI Hogeschool]] and contains commands and software we use or exploit during those sessions.
 
-*Warning*: This document is a /work in progress/ and can not be seen as an all-encompassing guide but as a starting point.
+*Warning*: This document is a /work in progress/ and can not be seen as an all-encompassing guide but as a starting point. The repository for this handbook can be found on [[https://github.com/credmp/htb-handbook/][Github]].
