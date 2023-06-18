@@ -4,8 +4,6 @@ This document is written with my Cybersecurity students in mind. If you are tryi
 
 *Warning*: This document is a /work in progress/ and can not be seen as an all-encompassing guide but as a starting point. The repository for this handbook can be found on [[https://github.com/credmp/htb-handbook/][Github]].
 
-[[./Scanning.org]]
-
 * 🔍 Scanning
 
 ** Services
