@@ -47,6 +47,8 @@ sudo nmap -sU -p- example.htb
 
 The ~nmap~ command, when used with the ~-sU~ and ~-p-~ options, performs a UDP port scan on a target host.
 
+*Warning*: This will take a very long time, you can always press ENTER to see the current status.
+
 UDP (User Datagram Protocol) is a connectionless protocol used for various network services. Unlike TCP (Transmission Control Protocol), UDP does not establish a reliable and ordered connection between hosts. UDP port scanning involves sending UDP packets to various ports on a target host and analyzing the responses received, if any.
 
 | Port | Service     | Description                                                             |
