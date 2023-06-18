@@ -4,4 +4,72 @@ This document is written with my Cybersecurity students in mind. If you are tryi
 
 *Warning*: This document is a /work in progress/ and can not be seen as an all-encompassing guide but as a starting point. The repository for this handbook can be found on [[https://github.com/credmp/htb-handbook/][Github]].
 
-- 🔍 [[file:Scanning.org][Scanning]]
+* 🔍 Scanning
+
+** Services
+
+#+begin_src shell
+nmap -sVC example.htb
+#+end_src
+
+The ~nmap~ command is a powerful network scanning tool used to discover hosts and services on a computer network. When executed with the ~-sVC~ option, it performs a comprehensive scan on the target host "example.htb".
+
+The ~-sV~ argument instructs ~nmap~ to perform service version detection. This means that it will attempt to determine the specific versions of services running on open ports. Knowing the service versions can be helpful for vulnerability assessment and determining potential security risks.
+
+The ~-sC~ argument enables the script scanning feature in ~nmap~. It tells ~nmap~ to run a set of default scripts that provide additional information about the target system. These scripts can identify various aspects of the target, such as common vulnerabilities, service enumeration, and remote operating system detection.
+
+The ports scanned in this way are limited to the 1000 most commonly used ports.
+
+|  Port | Service    | Description                                                             |
+|-------+------------+-------------------------------------------------------------------------|
+|    21 | FTP        | File Transfer Protocol - facilitates file transfers between clients and servers. |
+|    22 | SSH        | Secure Shell - provides secure remote access and command execution.     |
+|    25 | SMTP       | Simple Mail Transfer Protocol - used for sending email messages between servers. |
+|    80 | HTTP       | Hypertext Transfer Protocol - used for web browsing and communication.  |
+|   110 | POP3       | Post Office Protocol version 3 - retrieves email from a remote server.  |
+|   143 | IMAP       | Internet Message Access Protocol - retrieves email messages from a remote server. |
+|   443 | HTTPS      | HTTP Secure - provides secure communication using SSL/TLS for web browsing. |
+|  3389 | RDP        | Remote Desktop Protocol - enables remote desktop connections to a server or computer. |
+|  5432 | PostgreSQL | PostgreSQL Database Server - a popular open-source relational database system. |
+|  3306 | MySQL      | MySQL Database Server - a widely used open-source relational database system. |
+|  8080 | HTTP Proxy | HTTP Proxy - used to route HTTP traffic through a proxy server.         |
+|  8443 | HTTPS Alt  | Alternate HTTPS Port - often used for secure web communication on non-standard ports. |
+| 27017 | MongoDB    | MongoDB Database Server - a NoSQL database system.                      |
+|  6379 | Redis      | Redis Key-Value Store - an in-memory data structure store often used as a cache or message broker. |
+
+*** Finding all ports
+
+#+begin_src shell
+nmap -p- example.htb
+#+end_src
+
+The ~nmap~ command, when used with the ~-p-~ option, performs a port scan on a target host. The ~-p-~ option tells nmap to scan all *65,535* ports on the target host.
+
+*** Finding UDP ports
+
+#+begin_src
+sudo nmap -sU -p- example.htb
+#+end_src
+
+The ~nmap~ command, when used with the ~-sU~ and ~-p-~ options, performs a UDP port scan on a target host.
+
+*Warning*: This will take a very long time, you can always press ENTER to see the current status.
+
+UDP (User Datagram Protocol) is a connectionless protocol used for various network services. Unlike TCP (Transmission Control Protocol), UDP does not establish a reliable and ordered connection between hosts. UDP port scanning involves sending UDP packets to various ports on a target host and analyzing the responses received, if any.
+
+| Port | Service     | Description                                                             |
+|------+-------------+-------------------------------------------------------------------------|
+|   53 | DNS         | Domain Name System - translates domain names to IP addresses and vice versa. |
+|   67 | DHCP Server | Dynamic Host Configuration Protocol (Server) - assigns IP addresses to network devices. |
+|   68 | DHCP Client | Dynamic Host Configuration Protocol (Client) - requests an IP address from a DHCP server. |
+|   69 | TFTP        | Trivial File Transfer Protocol - used for simple file transfers between clients and servers. |
+|  123 | NTP         | Network Time Protocol - synchronizes system clocks on a network.        |
+|  161 | SNMP        | Simple Network Management Protocol - monitors and manages network devices. |
+|  162 | SNMP Trap   | SNMP Trap - sends notifications or alerts from SNMP agents to a management system. |
+|  520 | RIP         | Routing Information Protocol - exchange and update routing information in a network. |
+|  137 | NetBIOS     | NetBIOS Name Service - provides name resolution services for NetBIOS over IP. |
+|  138 | NetBIOS     | NetBIOS Datagram Service - supports connectionless communication between NetBIOS devices. |
+|  161 | SNMP        | Simple Network Management Protocol - monitors and manages network devices. |
+|  500 | IKE         | Internet Key Exchange - establishes secure VPN tunnels.                 |
+|  514 | Syslog      | Syslog - collects and forwards system log messages.                     |
+| 1900 | UPnP        | Universal Plug and Play - enables discovery and control of network devices. |
