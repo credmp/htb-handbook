@@ -73,3 +73,31 @@ UDP (User Datagram Protocol) is a connectionless protocol used for various netwo
 |  500 | IKE         | Internet Key Exchange - establishes secure VPN tunnels.                 |
 |  514 | Syslog      | Syslog - collects and forwards system log messages.                     |
 | 1900 | UPnP        | Universal Plug and Play - enables discovery and control of network devices. |
+
+* Burp Proxy
+To view and manipulate network traffic to and from websites we often use a tool called Burp Suite.
+
+** Viewing traffic with the Proxy
+To view traffic to and from websites Brup makes acts a so-called "proxy", acting as a middleman between the browser and webserver. The easiest way to connect through this proxy is by using Burp's built-in browser. To open this browser head to the ~Proxy~ tab, the ~Intercept~ tab and click on ~Open Browser~.
+
+#+attr_html: :width 900px
+[[https://i.imgur.com/LENmlId.png]]
+
+By heading to the ~HTTP history~ tab one can view the HTTP requests being made.
+
+#+attr_html: :width 900px
+[[https://i.imgur.com/93E4gdc.png]]
+
+** Sending a modified request
+If we want to modify a request we can do so by sending it to the ~Repeater~.
+
+You can do so by right clicking on a request and selecting ~Send to Repeater~.
+
+#+attr_html: :width 900px
+[[https://i.imgur.com/Hafq4uv.png]]
+
+Now you can go to the ~Repeater~ tab to modify and repeat the request.
+
+In the image we succesfully authenticate by performing an SQL injection.
+#+attr_html: :width 900px
+[[https://i.imgur.com/kjLxnoD.png]]
