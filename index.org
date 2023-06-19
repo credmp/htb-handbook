@@ -74,7 +74,7 @@ UDP (User Datagram Protocol) is a connectionless protocol used for various netwo
 |  514 | Syslog      | Syslog - collects and forwards system log messages.                     |
 | 1900 | UPnP        | Universal Plug and Play - enables discovery and control of network devices. |
 
-* Burp Proxy
+* 🧪 Burp Proxy
 To view and manipulate network traffic to and from websites we often use a tool called Burp Suite.
 
 ** Viewing traffic with the Proxy
