@@ -4,6 +4,27 @@ This document is written with my Cybersecurity students in mind. If you are tryi
 
 *Warning*: This document is a /work in progress/ and can not be seen as an all-encompassing guide but as a starting point. The repository for this handbook can be found on [[https://github.com/credmp/htb-handbook/][Github]].
 
+ # Labrador introductie?
+
+* <insert emoji> Connecting to the vpn
+
+ # https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access
+
+Hack The Box uses a VPN (Virtual Private Network) to connect the users to the machines. To connect to this network we use a tool called ~openvpn~.
+
+** Download the openvpn file.
+
+1. Login to Hack The Box.
+2. Click on the "Connect to HTB" button.
+3. Select the server you want to connect to, then select ~OpenVPN~.
+4. Download the OpenVPN file.
+
+    [[https://i.imgur.com/GkaGUHi.png]]
+
+5. Execute ~sudo openvpn ~/Downloads/<downloaded .ovpn file>~ within Kali.
+    [[https://i.imgur.com/0bUXP1c.png]]
+    The command will display "Initilization Sequence Completed" when succesful.
+
 * 🔍 Scanning
 
 ** Services
