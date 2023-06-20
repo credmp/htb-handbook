@@ -1,8 +1,10 @@
-#+TITLE: Scanning
+#+TITLE: 🔍 Scanning
 
+Scanning is an essential activity in a hacking session that involves actively seeking vulnerabilities or weaknesses in a system or network. It is carried out to identify open ports, services, and applications that can be manipulated to gain unauthorized access. Proper scanning can help a hacker to map out the target network or system, discover the necessary information needed for a successful attack, and identify potential entry points for further exploitation.
 
 * Services
 
+#+name: A basic nmap command
 #+begin_src shell
 nmap -sVC example.htb
 #+end_src
