@@ -1,0 +1,15 @@
+#+TITLE: SNMP
+
+Simple Network Management Protocol (SNMP) is an internet protocol used to manage and monitor network devices such as routers, switches, and servers. It operates by allowing network management systems to communicate with these devices, collecting and organizing information about their status and performance. SNMP identifies objects on a network using unique identifiers and manages network devices through get, set, and trap messages. SNMP has three main components: the management system that makes requests, the agents that reply to the requests, and the managed devices that are monitored and controlled by the management system. It is widely used by network administrators to proactively monitor network performance and troubleshoot issues on the network.
+
+* snmpwalk
+
+SNMPwalk is a command-line tool used to query SNMP-enabled devices, such as routers, switches, and servers, to retrieve information about their configuration and performance. It is similar to a network monitoring tool and can be used to identify statistics and metrics about devices on a network. How it works is that it sends a series of requests to the management agent on the SNMP-enabled device, requesting information for a specific OID to obtain extensive data across several MIBs. The tool displays the retrieved values in a structured format, thus providing network administrators with an efficient means to discover configurations and states of network devices. It is useful for troubleshooting and diagnosing network issues, analyzing network performance, as well as verifying if SNMP is correctly configured on remote devices.
+
+#+begin_src
+snmpwalk -c public -v2 example.htb
+#+end_src
+
+In this example, `-c` stands for community string and `public` is an example of a community string which is a password-like string that provides access to the SNMP-enabled device. `-v2` specifies the SNMP version, which in this case is version 2. `example.htb` is the hostname of the device that snmpwalk will query.
+
+When executed, snmpwalk will return a long list of variables that represent the MIBs on the device being queried. This provides you with a broad range of information about the device, such as system uptime, processor usage, memory usage, and much more. The output of snmpwalk can be stored in a file or analyzed by other network monitoring and troubleshooting tools.

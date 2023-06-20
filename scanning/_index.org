@@ -54,19 +54,17 @@ The ~nmap~ command, when used with the ~-sU~ and ~-p-~ options, performs a UDP p
 
 UDP (User Datagram Protocol) is a connectionless protocol used for various network services. Unlike TCP (Transmission Control Protocol), UDP does not establish a reliable and ordered connection between hosts. UDP port scanning involves sending UDP packets to various ports on a target host and analyzing the responses received, if any.
 
-| Port | Service     | Description                                                             |
-|------+-------------+-------------------------------------------------------------------------|
-|   53 | DNS         | Domain Name System - translates domain names to IP addresses and vice versa. |
-|   67 | DHCP Server | Dynamic Host Configuration Protocol (Server) - assigns IP addresses to network devices. |
-|   68 | DHCP Client | Dynamic Host Configuration Protocol (Client) - requests an IP address from a DHCP server. |
+| Port | Service     | Description                                                                                  |
+|------+-------------+----------------------------------------------------------------------------------------------|
+|   53 | DNS         | Domain Name System - translates domain names to IP addresses and vice versa.                 |
+|   67 | DHCP Server | Dynamic Host Configuration Protocol (Server) - assigns IP addresses to network devices.      |
 |   69 | TFTP        | Trivial File Transfer Protocol - used for simple file transfers between clients and servers. |
-|  123 | NTP         | Network Time Protocol - synchronizes system clocks on a network.        |
-|  161 | SNMP        | Simple Network Management Protocol - monitors and manages network devices. |
-|  162 | SNMP Trap   | SNMP Trap - sends notifications or alerts from SNMP agents to a management system. |
-|  520 | RIP         | Routing Information Protocol - exchange and update routing information in a network. |
-|  137 | NetBIOS     | NetBIOS Name Service - provides name resolution services for NetBIOS over IP. |
-|  138 | NetBIOS     | NetBIOS Datagram Service - supports connectionless communication between NetBIOS devices. |
-|  161 | SNMP        | Simple Network Management Protocol - monitors and manages network devices. |
-|  500 | IKE         | Internet Key Exchange - establishes secure VPN tunnels.                 |
-|  514 | Syslog      | Syslog - collects and forwards system log messages.                     |
-| 1900 | UPnP        | Universal Plug and Play - enables discovery and control of network devices. |
+|  123 | NTP         | Network Time Protocol - synchronizes system clocks on a network.                             |
+|  161 | SNMP        | Simple Network Management Protocol - monitors and manages network devices.                   |
+|  162 | SNMP Trap   | SNMP Trap - sends notifications or alerts from SNMP agents to a management system.           |
+|  137 | NetBIOS     | NetBIOS Name Service - provides name resolution services for NetBIOS over IP.                |
+|  138 | NetBIOS     | NetBIOS Datagram Service - supports connectionless communication between NetBIOS devices.    |
+|  161 | [[./snmp][SNMP]]        | Simple Network Management Protocol - monitors and manages network devices.                   |
+|  500 | IKE         | Internet Key Exchange - establishes secure VPN tunnels.                                      |
+|  514 | Syslog      | Syslog - collects and forwards system log messages.                                          |
+| 1900 | UPnP        | Universal Plug and Play - enables discovery and control of network devices.                  |
