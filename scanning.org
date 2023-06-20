@@ -1,12 +1,7 @@
-#+TITLE: The Hack The Box handbook
+#+TITLE: Scanning
 
-This document is written with my Cybersecurity students in mind. If you are trying to learn Hack The Box it will serve as a great starting point for your own methodology. It provides some explanation and commands to run at each step. The document is built during our Hack Friday sessions at [[https://www.novi.nl][NOVI Hogeschool]] and contains commands and software we use or exploit during those sessions.
 
-*Warning*: This document is a /work in progress/ and can not be seen as an all-encompassing guide but as a starting point. The repository for this handbook can be found on [[https://github.com/credmp/htb-handbook/][Github]].
-
-* 🔍 Scanning
-
-** Services
+* Services
 
 #+begin_src shell
 nmap -sVC example.htb
@@ -37,7 +32,7 @@ The ports scanned in this way are limited to the 1000 most commonly used ports.
 | 27017 | MongoDB    | MongoDB Database Server - a NoSQL database system.                      |
 |  6379 | Redis      | Redis Key-Value Store - an in-memory data structure store often used as a cache or message broker. |
 
-*** Finding all ports
+** Finding all ports
 
 #+begin_src shell
 nmap -p- example.htb
@@ -45,7 +40,7 @@ nmap -p- example.htb
 
 The ~nmap~ command, when used with the ~-p-~ option, performs a port scan on a target host. The ~-p-~ option tells nmap to scan all *65,535* ports on the target host.
 
-*** Finding UDP ports
+** Finding UDP ports
 
 #+begin_src
 sudo nmap -sU -p- example.htb
