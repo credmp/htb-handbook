@@ -1,0 +1,3 @@
+#+title: Basic HTB and Linux things
+
+Everybody has to start somewhere, the basics is where it is at. From connecting to the lab to basic Linux commands.

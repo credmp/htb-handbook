@@ -1,0 +1,3 @@
+#+title: Custom Software
+
+The Medium and over machines generally require a little coding to get done. Many of the scripts share a same root, such as brute forcers. Use the following code as a starting point for your own code.

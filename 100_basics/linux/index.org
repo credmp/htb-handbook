@@ -1,0 +1,21 @@
+#+title: Basic Linux Commands
+
+* Copy contents of a file to the clipboard
+
+The ~xclip~ command is very useful when you want to copy files to the clipboard.
+
+#+begin_src
+sudo apt install xclip
+#+end_src
+
+Use it as follows to put something on the internal clipboard of your VM:
+
+#+begin_src
+cat file | xclip -selection clipboard
+#+end_src
+
+If you want to use it to copy something from you VM to your host machine, use the ~primary~.
+
+#+begin_src
+cat file | xclip -selection primary
+#+end_src

