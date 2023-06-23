@@ -1,0 +1,26 @@
+#+title: 🌍 Connecting to the vpn
+
+[[https://help.hackthebox.com/en/articles/5185687-introduction-to-lab-access][HTB Documentation: Introduction to lab access]].
+
+Hack The Box uses a VPN (Virtual Private Network) to connect the users to the machines. To connect to this network we use a tool called ~openvpn~.
+
+* Download the openvpn file.
+
+1. Login to Hack The Box.
+2. Click on the "Connect to HTB" button.
+3. Select the server you want to connect to, then select ~OpenVPN~.
+4. Download the OpenVPN file.
+
+[[./connect.png]]
+
+* Connect with OpenVPN
+
+Open the file with ~openvpn~ within Kali:
+
+#+begin_src shell
+sudo openvpn ~/Downloads/<downloaded .ovpn file>
+#+end_src
+
+[[./vpn.png]]
+
+The command will display "Initilization Sequence Completed" when succesful.
