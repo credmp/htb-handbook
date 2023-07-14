@@ -1,0 +1,14 @@
+#+title: Reverse Shells
+
+* Upgrade a non-interactive shell
+
+** Using python
+
+#+begin_src
+python3 -c 'import pty; pty.spawn("/bin/bash");'
+#+end_src
+
+** Using the script command
+#+begin_src
+script /dev/null -c bash
+#+end_src
