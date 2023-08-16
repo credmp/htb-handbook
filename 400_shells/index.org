@@ -1,4 +1,4 @@
-#+title: Reverse Shells
+#+title: 🐚 Reverse Shells
 
 * Automatically upgrade a shell
 
